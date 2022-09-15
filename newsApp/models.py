@@ -36,7 +36,7 @@ class Kryesoret(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.title
+        return self.titull
 
 
 class Comment(models.Model):
