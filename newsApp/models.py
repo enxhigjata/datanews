@@ -31,7 +31,7 @@ class Post(models.Model):
         return f"{self.title} - {self.user.username}"
 
 class Kryesoret(models.Model):
-    image = models.ImageField(upload_to='media/news_kryesoret/')
+    image = models.ImageField(upload_to='media/news_kryesoret')
     titull = models.TextField()
     date_created = models.DateTimeField(default=timezone.now)
 
