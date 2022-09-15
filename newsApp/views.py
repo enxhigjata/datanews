@@ -19,30 +19,30 @@ def context_data():
 # Create your views here.
 def home(request):
     context = context_data()
-    politik_posts = models.Post.objects.filter(status = 1, category = 8 ).order_by('-date_created').all()
+    politik_posts = models.Post.objects.filter(status = 1, category = 1 ).order_by('-date_created').all()
     context['page'] = 'home'
     context['page_title'] = 'Home'
     context['politik_latest_top'] = politik_posts[:2]
     context['politik_latest_bottom'] = politik_posts[2:12]
-    ekonomi_posts = models.Post.objects.filter(status=1, category=9).order_by('-date_created').all()
+    ekonomi_posts = models.Post.objects.filter(status=1, category=2).order_by('-date_created').all()
     context['ekonomi_latest_top'] = ekonomi_posts[:2]
     context['ekonomi_latest_bottom'] = ekonomi_posts[2:12]
-    ballkan_posts = models.Post.objects.filter(status=1, category=10).order_by('-date_created').all()
+    ballkan_posts = models.Post.objects.filter(status=1, category=3).order_by('-date_created').all()
     context['ballkan_latest_top'] = ballkan_posts[:2]
     context['ballkan_latest_bottom'] = ballkan_posts[2:12]
-    bote_posts = models.Post.objects.filter(status=1, category=11).order_by('-date_created').all()
+    bote_posts = models.Post.objects.filter(status=1, category=4).order_by('-date_created').all()
     context['bote_latest_top'] = bote_posts[:2]
     context['bote_latest_bottom'] = bote_posts[2:12]
-    jete_posts = models.Post.objects.filter(status=1, category=12).order_by('-date_created').all()
+    jete_posts = models.Post.objects.filter(status=1, category=5).order_by('-date_created').all()
     context['jete_latest_top'] = jete_posts[:2]
     context['jete_latest_bottom'] = jete_posts[2:12]
-    spektakel_posts = models.Post.objects.filter(status=1, category=13).order_by('-date_created').all()
+    spektakel_posts = models.Post.objects.filter(status=1, category=6).order_by('-date_created').all()
     context['spektakel_latest_top'] = spektakel_posts[:2]
     context['spektakel_latest_bottom'] = spektakel_posts[2:12]
-    art_posts = models.Post.objects.filter(status=1, category=14).order_by('-date_created').all()
+    art_posts = models.Post.objects.filter(status=1, category=7).order_by('-date_created').all()
     context['art_latest_top'] = art_posts[:2]
     context['art_latest_bottom'] = art_posts[2:12]
-    sport_posts = models.Post.objects.filter(status=1, category=15).order_by('-date_created').all()
+    sport_posts = models.Post.objects.filter(status=1, category=8).order_by('-date_created').all()
     context['sport_latest_top'] = sport_posts[:2]
     context['sport_latest_bottom'] = sport_posts[2:12]
     lajme_kryesore = models.Kryesoret.objects.order_by('-date_created').all()
