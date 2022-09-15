@@ -1,0 +1,73 @@
+{% load static %}
+<style>
+
+    .classy-menu{
+        padding: 0px;
+    }
+    .classy-navbar{
+        background: rgba(104, 164, 136, 0.62);
+        padding: 0px;
+    }
+    .classy-navbar < ul < li < a{
+        color:green;
+    }
+    .header-area {
+        padding: 0px;
+        background:rgba(104, 164, 136, 0.62);
+
+    }
+</style>
+<header class="header-area ">
+    <!-- Navbar Area -->
+    <div class="newsbox-main-menu">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container-fluid">
+                <!-- Menu -->
+                <nav class="classy-navbar justify-content-around" id="newsboxNav">
+
+                    <!-- Nav brand -->
+                    <a href="index.html" class="nav-brand"><img src="{% static 'img/core-img/Datanews.png' %}" alt=""></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+
+                        <!-- Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+                                <li><a href="{%url 'home-page'%}">Kryefaqja</a>
+                                {% for category in categories %}
+                                <li><a href="{% url 'category-post' category.id %}">{{category}}</a></li>
+                                {% endfor %}
+                                {% if not user.id %}
+
+                                {% else %}
+                                <li>
+                                    <a href="#">Pershendetje, {{user.username}}</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'profile-page' %}">Profile</a></li>
+                                        <li><a href="{% url 'new-post' %}">New Post</a></li>
+                                        <li><a href="{% url 'all-posts' %}">All Posts</a></li>
+                                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                                    </ul>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
