@@ -1,7 +1,7 @@
 {% extends 'layouts/base.html' %}{% load static %} {% block content %}
 <div class="news-area section-padding-100-70">
     <div class="container">
-        <h3 class="text-center"><b>All Posts</b></h3>
+        <h3 class="text-center" style="color:rgb(58, 88, 74)"><b>All Posts</b></h3>
         <center>
             <hr class="w-25">
         </center>
@@ -20,7 +20,6 @@
                         <div class="blog-content">
                             <span class="post-date">{{post.date_created|date:'M d, Y'}}</span>
                             <a href="{% url 'view-post' post.pk %}" class="post-title">{{post.title}}</a>
-                            <a href="#" class="post-author">By {{post.user.username}}</a>
                             <p>{{post.short_description|truncatechars:100}}</p>
                         </div>
                     </div>

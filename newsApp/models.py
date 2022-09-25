@@ -34,6 +34,7 @@ class Kryesoret(models.Model):
     image = models.ImageField(upload_to='media/news_kryesoret')
     titull = models.TextField()
     date_created = models.DateTimeField(default=timezone.now)
+    lexo=models.URLField(default="")
 
     def __str__(self):
         return self.titull
